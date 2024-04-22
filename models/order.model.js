@@ -13,7 +13,7 @@ const orderSchema = new mongoose.Schema({
     products: [{
         product: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Product', // Tên model mà ObjectId này tham chiếu đến
+            ref: 'Product',
             required: true
         },
         quantity: {

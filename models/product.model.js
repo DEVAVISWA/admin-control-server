@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-// Định nghĩa schema cho sản phẩm
+
 const productSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -18,7 +18,7 @@ const productSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    // Các trường khác có thể được thêm vào tùy thuộc vào yêu cầu cụ thể
+    
 });
 
 // Tạo mô hình từ schema
