@@ -10,19 +10,28 @@ const app = express();
 app.use(express.json());
 
 //cors
-const corsOptions = {
-  origin: [
-    "https://admin-control-client.vercel.app/",
-    "http://127.0.0.1:3002",
-  ],
-};
-app.use(cors(corsOptions));
+app.use(cors());
+// const corsOptions = {
+//   origin: [
+//     "https://admin-control-client.vercel.app",
+//     "http://localhost:3000",
+//   ],
+// };
+// app.use(cors(corsOptions));
 // app.use(cors());
 
 app.use((req, res, next) => {
   console.log(req.path, req.method);
   next();
 });
+
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  next();
+});
+
 // Set up a route
 app.use("/client", clientRoutes);
 
@@ -31,7 +40,7 @@ app.use("/", (req, res) => {
   res.send("<h1>Admin control by Deva Viswa G</h1>");
 });
 
-// Set up the server
+// Set up the server and
 
 // connect to the database
 mongoose
