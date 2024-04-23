@@ -18,6 +18,10 @@ app.use((req, res, next) => {
 // Set up a route
 app.use('/client', clientRoutes);
 
+//setup a default route
+app.use('/',(req,res)=>{
+    res.send('<h1>Admin control by Deva Viswa G</h1>')
+})
 
 // Set up the server
 
