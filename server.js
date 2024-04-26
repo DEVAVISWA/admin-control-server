@@ -12,10 +12,7 @@ app.use(express.json());
 //cors
 // app.use(cors());
 const corsOptions = {
-  origin: [
-    "https://admin-control-client.vercel.app",
-    "http://localhost:3000",
-  ],
+  origin: "*"
 };
 app.use(cors(corsOptions));
 
