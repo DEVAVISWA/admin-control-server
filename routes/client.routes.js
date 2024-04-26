@@ -5,7 +5,7 @@ const { getClients, getClient, createClient, updateClient, deleteClient, deleteA
 // controller
 router.get('/', getClients);
 router.get('/:id', getClient);
-router.post('/cc', createClient);
+router.post('/', createClient);
 router.put('/:id', updateClient);
 router.delete('/:id', deleteClient);
 router.delete('/', deleteAllClients);

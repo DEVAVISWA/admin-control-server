@@ -12,7 +12,7 @@ const clientSchema = new mongoose.Schema({
     dob: {
         type: String,
         required: true
-    },
+    }, 
     phone: {
         type: String,
         required: true
